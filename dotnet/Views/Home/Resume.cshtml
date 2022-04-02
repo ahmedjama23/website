@@ -19,10 +19,35 @@
     var jobs = jobRepository.GetAllJobs();
 }
 
-<div class="text-center">
+<body>
+    <div class="persona container">
+        <div class="row justify-content-left">
+            <div class="col">
+                <h1>@persona.Name</h1>
+            </div>
+        </div>
+        <div class="row justify-content-left">
+            <div class="col-2">
+                <p>@persona.Locale</p>
+            </div>
+            <div class="col-2">
+                <p>@persona.Phone</p>
+            </div>
+            <div class="col-2">
+                <p>@persona.Email</p>
+            </div>
+        </div>
+    </div>
+
+
     <div class="technicalSkills container">
-        <div class="row">
-            <div class="col-sm">
+        <div class="row text-left">
+            <div class="col">
+                <h3>Technical Skills</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4">
                 <ul style="list-style-type: none">
                     <h4>Languages</h4>
                     @foreach (TechnicalSkill skill in technicalSkills)
@@ -34,7 +59,7 @@
                     }
                 </ul>
             </div>
-            <div class="col-sm">
+            <div class="col-4">
                 <ul style="list-style-type: none">
                     <h4>Technologies</h4>
                     @foreach (TechnicalSkill technicalSkill in technicalSkills)
@@ -48,13 +73,18 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="text-center">
+
+
     <div class="softSkills container">
+        <div class="row text-left">
+            <div class="col">
+                <h3>Soft Skills</h3>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm">
-                <ul style="list-style-type: none">
+                <ul>
                     @foreach (SoftSkill softSkill in softSkills)
                     {
                         <li><b>@softSkill.Title</b>: @softSkill.Subtitle</li>
@@ -63,10 +93,15 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="text-center">
+
+
     <div class="experience container">
+        <div class="row text-left">
+            <div class="col">
+                <h3>Professional Experience</h3>
+            </div>
+        </div>
         @foreach (Job job in jobs)
         {
             <div class="container">
@@ -78,16 +113,16 @@
                         <p class="text-right"><b>@job.BeginDate - @job.EndDate</b></p>
                     </div>
                 </div>
-            <div class="row">
-                <div class="col">
-                    <p class="text-left"><b>@job.Company - @job.Locale</b></p>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-left"><b>@job.Company - @job.Locale</b></p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p class="text-left">@job.Description</p>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-left">@job.Description</p>
+                    </div>
                 </div>
-            </div>
 
                 <div class="row">
                     <div class="col">
@@ -104,13 +139,13 @@
                             }
                         </ul>
                     </div>
-            </div>
+                </div>
 
-            
+
             </div>
         }
     </div>
-</div>
+</body>
 
 @*<ul>
     @foreach (Job job in jobs)
