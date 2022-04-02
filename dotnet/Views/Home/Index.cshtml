@@ -1,9 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Welcome";
+    var profilePicPath = "https://localhost:5001/img/188_1480808926847.jpg";
 }
 
 <div class="text-center">
-    <img src="./wwwroot/img/188_1480808926847.jpg">
+    <img src="@profilePicPath">
     <h1 class="display-4">Ahmed Jama</h1>
 </div>
 
@@ -13,7 +14,7 @@
 </div>
 <div class="text-left">
     <ul>
-        <li>Profile Picture</li>
+        <li><s>Profile Picture</s></li>
         <li>Profile Text</li>
     </ul>
 </div>
