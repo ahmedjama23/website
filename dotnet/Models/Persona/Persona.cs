@@ -6,7 +6,6 @@ namespace dotnet.Models.Persona
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Phone { get; set; }
         public string Locale { get; set; }
 
         //Constructor
@@ -25,7 +24,6 @@ namespace dotnet.Models.Persona
             this.Id = 1;
             this.Name = "Ahmed Jama";
             this.Email = "ajama07@hotmail.com";
-            this.Phone = "587-707-9670";
             this.Locale = "Calgary, AB";
         }
     }

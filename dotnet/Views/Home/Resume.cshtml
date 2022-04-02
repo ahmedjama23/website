@@ -23,22 +23,12 @@
     <div class="persona container">
         <div class="row justify-content-left">
             <div class="col">
-                <h1>@persona.Name</h1>
-            </div>
-        </div>
-        <div class="row justify-content-left">
-            <div class="col-2">
-                <p>@persona.Locale</p>
-            </div>
-            <div class="col-2">
-                <p>@persona.Phone</p>
-            </div>
-            <div class="col-2">
-                <p>@persona.Email</p>
+                <h1><b>@persona.Name</b></h1>
             </div>
         </div>
     </div>
 
+    <hr />
 
     <div class="technicalSkills container">
         <div class="row text-left">
@@ -74,7 +64,7 @@
         </div>
     </div>
 
-
+    <hr />
 
     <div class="softSkills container">
         <div class="row text-left">
@@ -94,7 +84,7 @@
         </div>
     </div>
 
-
+    <hr />
 
     <div class="experience container">
         <div class="row text-left">
@@ -105,9 +95,18 @@
         @foreach (Job job in jobs)
         {
             <div class="container">
+                @if(job.Id != 1)
+                {
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <hr />
+                        </div>
+                    </div>
+                }
+
                 <div class="row">
                     <div class="col">
-                        <p class="text-left"><b>@job.Position</b></p>
+                        <h5 class="text-left"><b>@job.Position</b></h5>
                     </div>
                     <div class="col">
                         <p class="text-right"><b>@job.BeginDate - @job.EndDate</b></p>
@@ -140,8 +139,6 @@
                         </ul>
                     </div>
                 </div>
-
-
             </div>
         }
     </div>
