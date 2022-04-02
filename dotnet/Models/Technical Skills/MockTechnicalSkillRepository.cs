@@ -25,14 +25,14 @@ namespace dotnet.Models.TechnicalSkills
             _technicalSkillList.Add(new TechnicalSkill(9, "CSS", "Language"));
             _technicalSkillList.Add(new TechnicalSkill(10, "PHP", "Language"));
 
-            _technicalSkillList.Add(new TechnicalSkill(11, "Tableau", "Technologies"));
-            _technicalSkillList.Add(new TechnicalSkill(12, "Power BI", "Technologies"));
-            _technicalSkillList.Add(new TechnicalSkill(13, "SSMS", "Technologies"));
-            _technicalSkillList.Add(new TechnicalSkill(14, "Visual Studio Code", "Technologies"));
-            _technicalSkillList.Add(new TechnicalSkill(15, "Visual Studio", "Technologies"));
-            _technicalSkillList.Add(new TechnicalSkill(16, "JIRA", "Technologies"));
-            _technicalSkillList.Add(new TechnicalSkill(17, "Virtual Machines", "Technologies"));
-            _technicalSkillList.Add(new TechnicalSkill(18, "ArcGIS Pro", "Technologies"));
+            _technicalSkillList.Add(new TechnicalSkill(11, "Tableau", "Technology"));
+            _technicalSkillList.Add(new TechnicalSkill(12, "Power BI", "Technology"));
+            _technicalSkillList.Add(new TechnicalSkill(13, "SSMS", "Technology"));
+            _technicalSkillList.Add(new TechnicalSkill(14, "Visual Studio Code", "Technology"));
+            _technicalSkillList.Add(new TechnicalSkill(15, "Visual Studio", "Technology"));
+            _technicalSkillList.Add(new TechnicalSkill(16, "JIRA", "Technology"));
+            _technicalSkillList.Add(new TechnicalSkill(17, "Virtual Machines", "Technology"));
+            _technicalSkillList.Add(new TechnicalSkill(18, "ArcGIS Pro", "Technology"));
         }
 
         public List<TechnicalSkill> GetAllTechnicalSkills()
