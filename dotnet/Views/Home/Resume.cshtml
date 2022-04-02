@@ -1,18 +1,16 @@
 ﻿@using dotnet.Models;
 @using dotnet.Models.TechnicalSkills;
+@using dotnet.Models.SoftSkills;
 @using dotnet.Models.Persona;
 
 @{
     ViewData["Title"] = "Resume";
     var persona = ViewData["Persona"] as Persona;
-    var _technicalSkillsRepository = ViewData["TechnicalSkillsRepository"] as ITechnicalSkillRepository;
-    var technicalSkills = _technicalSkillsRepository.GetAllTechnicalSkills();
+    var technicalSkillsRepository = ViewData["TechnicalSkillRepository"] as ITechnicalSkillRepository;
+    var softSkillsRepository = ViewData["SoftSkillRepository"] as ISoftSkillRepository;
 
-    //var technicalSkillsQuery = from skill in technicalSkills
-    //                           select skill.Name;
-
-    //foreach (var name in technicalSkillsQuery)
-    //    return name;
+    var technicalSkills = technicalSkillsRepository.GetAllTechnicalSkills();
+    var softSkills = softSkillsRepository.GetAllSoftSkills();
 }
 
 <div class="text-center">
@@ -38,15 +36,21 @@
             </ul>
             <ul>
                 Technologies
-                @foreach (TechnicalSkill skill in technicalSkills)
+                @foreach (TechnicalSkill technicalSkill in technicalSkills)
                 {
-                    @if (skill.Type == "Technology")
+                    @if (technicalSkill.Type == "Technology")
                     {
-                        <li>@skill.Name</li>
+                        <li>@technicalSkill.Name</li>
                     }
                 }
             </ul>
             <li>Soft Skills</li>
+            <ul>
+                @foreach(SoftSkill softSkill in softSkills)
+                {
+                    <li><b>@softSkill.Title</b>: @softSkill.Subtitle</li>
+                }
+            </ul>
             <li>Education</li>
         </ul>
         <li>Create data-driven view</li>

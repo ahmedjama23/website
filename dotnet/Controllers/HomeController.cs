@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using dotnet.Models;
 using dotnet.Models.TechnicalSkills;
+using dotnet.Models.SoftSkills;
 using dotnet.Models.Persona;
 
 namespace dotnet.Controllers
@@ -15,6 +16,7 @@ namespace dotnet.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private ITechnicalSkillRepository _technicalSkillRepository = new MockTechnicalSkillRepository();
+        private ISoftSkillRepository _softSkillRepository = new MockSoftSkillRepository();
         private Persona persona = new Persona();
 
         public HomeController(ILogger<HomeController> logger)
@@ -30,7 +32,8 @@ namespace dotnet.Controllers
         public IActionResult Resume()
         {
             ViewData["Persona"] = persona;
-            ViewData["TechnicalSkillsRepository"] = _technicalSkillRepository;
+            ViewData["TechnicalSkillRepository"] = _technicalSkillRepository;
+            ViewData["SoftSkillRepository"] = _softSkillRepository;
             return View();
         }
 

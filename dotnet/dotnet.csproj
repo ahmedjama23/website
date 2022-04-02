@@ -8,6 +8,7 @@
   <ItemGroup>
     <None Remove="Models\Persona\" />
     <None Remove="Models\Technical Skills\" />
+    <None Remove="Models\Soft Skills\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -29,5 +30,6 @@
   <ItemGroup>
     <Folder Include="Models\Persona\" />
     <Folder Include="Models\Technical Skills\" />
+    <Folder Include="Models\Soft Skills\" />
   </ItemGroup>
 </Project>
