@@ -15,12 +15,12 @@ namespace dotnet.Models.Education
             _educationSkillList.Add(new Education(1, "Mount Royal University", "Bachelor of Computer Information Systems", "Calgary, AB", 2013, 2019));
         }
 
-        public List<Education> getAllEducation()
+        public List<Education> GetAllEducation()
         {
             return _educationSkillList;
         }
 
-        public Education getEducation(string institution)
+        public Education GetEducation(string institution)
         {
             return _educationSkillList.Find(x => x.Institution == institution);
         }

@@ -5,7 +5,7 @@ namespace dotnet.Models.Education
 {
     public interface IEducationRepository
     {
-        Education getEducation(string institution);
-        List<Education> getAllEducation();
+        Education GetEducation(string institution);
+        List<Education> GetAllEducation();
     }
 }

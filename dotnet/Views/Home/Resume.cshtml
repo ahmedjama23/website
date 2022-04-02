@@ -3,6 +3,7 @@
 @using dotnet.Models.SoftSkills;
 @using dotnet.Models.Persona;
 @using dotnet.Models.Education;
+@using dotnet.Models.Jobs;
 
 @{
     ViewData["Title"] = "Resume";
@@ -10,10 +11,12 @@
     var technicalSkillsRepository = ViewData["TechnicalSkillRepository"] as ITechnicalSkillRepository;
     var softSkillsRepository = ViewData["SoftSkillRepository"] as ISoftSkillRepository;
     var educationRepository = ViewData["EducationRepository"] as IEducationRepository;
+    var jobRepository = ViewData["JobRepository"] as IJobRepository;
 
     var technicalSkills = technicalSkillsRepository.GetAllTechnicalSkills();
     var softSkills = softSkillsRepository.GetAllSoftSkills();
-    var education = educationRepository.getAllEducation();
+    var education = educationRepository.GetAllEducation();
+    var jobs = jobRepository.GetAllJobs();
 }
 
 <div class="text-center">
@@ -27,6 +30,25 @@
         <ul>
             <li><s>@persona.Name</s></li>
             <li>Professional Experience</li>
+            <ul>
+                @foreach (Job job in jobs)
+                {
+                    <li><b>@job.Position</b></li>
+                    <li><b>@job.Company</b></li>
+                    <li><b>@job.Locale</b></li>
+                    <li>
+                        <ul>
+                            @foreach (string resp in job.Responsibilities)
+                            {
+                                <li>- @resp</li>
+                            }
+                        </ul>
+                    </li>
+                    <li><b>@job.BeginDate</b></li>
+                    <li><b>@job.EndDate</b></li>
+                    <li><b>@job.Description</b></li>
+                }
+            </ul>
             <ul>
                 Languages
                 @foreach (TechnicalSkill skill in technicalSkills)
@@ -56,7 +78,7 @@
             </ul>
             <li>Education</li>
             <ul>
-                @foreach(Education edu in education)
+                @foreach (Education edu in education)
                 {
                     <li><b>@edu.Program</b> - @edu.Institution, @edu.Locale | @edu.BeginYear - @edu.EndYear</li>
                 }
