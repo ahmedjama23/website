@@ -9,6 +9,7 @@ using dotnet.Models;
 using dotnet.Models.TechnicalSkills;
 using dotnet.Models.SoftSkills;
 using dotnet.Models.Persona;
+using dotnet.Models.Education;
 
 namespace dotnet.Controllers
 {
@@ -17,6 +18,7 @@ namespace dotnet.Controllers
         private readonly ILogger<HomeController> _logger;
         private ITechnicalSkillRepository _technicalSkillRepository = new MockTechnicalSkillRepository();
         private ISoftSkillRepository _softSkillRepository = new MockSoftSkillRepository();
+        private IEducationRepository _educationRepository = new MockEducationRepository();
         private Persona persona = new Persona();
 
         public HomeController(ILogger<HomeController> logger)
@@ -34,6 +36,7 @@ namespace dotnet.Controllers
             ViewData["Persona"] = persona;
             ViewData["TechnicalSkillRepository"] = _technicalSkillRepository;
             ViewData["SoftSkillRepository"] = _softSkillRepository;
+            ViewData["EducationRepository"] = _educationRepository;
             return View();
         }
 

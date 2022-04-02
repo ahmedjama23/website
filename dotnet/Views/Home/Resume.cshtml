@@ -2,15 +2,18 @@
 @using dotnet.Models.TechnicalSkills;
 @using dotnet.Models.SoftSkills;
 @using dotnet.Models.Persona;
+@using dotnet.Models.Education;
 
 @{
     ViewData["Title"] = "Resume";
     var persona = ViewData["Persona"] as Persona;
     var technicalSkillsRepository = ViewData["TechnicalSkillRepository"] as ITechnicalSkillRepository;
     var softSkillsRepository = ViewData["SoftSkillRepository"] as ISoftSkillRepository;
+    var educationRepository = ViewData["EducationRepository"] as IEducationRepository;
 
     var technicalSkills = technicalSkillsRepository.GetAllTechnicalSkills();
     var softSkills = softSkillsRepository.GetAllSoftSkills();
+    var education = educationRepository.getAllEducation();
 }
 
 <div class="text-center">
@@ -46,12 +49,18 @@
             </ul>
             <li>Soft Skills</li>
             <ul>
-                @foreach(SoftSkill softSkill in softSkills)
+                @foreach (SoftSkill softSkill in softSkills)
                 {
                     <li><b>@softSkill.Title</b>: @softSkill.Subtitle</li>
                 }
             </ul>
             <li>Education</li>
+            <ul>
+                @foreach(Education edu in education)
+                {
+                    <li><b>@edu.Program</b> - @edu.Institution, @edu.Locale | @edu.BeginYear - @edu.EndYear</li>
+                }
+            </ul>
         </ul>
         <li>Create data-driven view</li>
     </ul>
