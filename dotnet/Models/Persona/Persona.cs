@@ -4,10 +4,10 @@ namespace dotnet.Models.Persona
     public class Persona : IPersona
     {
         public int Id { get; set; }
-        public String Name { get; set; }
-        public String Email { get; set; }
-        public String Phone { get; set; }
-        public String Locale { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Locale { get; set; }
 
         //Constructor
         //public Persona(int id, String name, String email, String phone, String locale)
@@ -22,11 +22,11 @@ namespace dotnet.Models.Persona
         //Mock Constructor
         public Persona()
         {
-            Id = 1;
-            Name = "Ahmed Jama";
-            Email = "ajama07@hotmail.com";
-            Phone = "587-707-9670";
-            Locale = "Calgary, AB";
+            this.Id = 1;
+            this.Name = "Ahmed Jama";
+            this.Email = "ajama07@hotmail.com";
+            this.Phone = "587-707-9670";
+            this.Locale = "Calgary, AB";
         }
     }
 }

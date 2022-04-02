@@ -1,5 +1,18 @@
-﻿@{
+﻿@using dotnet.Models;
+@using dotnet.Models.TechnicalSkills;
+@using dotnet.Models.Persona;
+
+@{
     ViewData["Title"] = "Resume";
+    var persona = ViewData["Persona"] as Persona;
+    var _technicalSkillsRepository = ViewData["TechnicalSkillsRepository"] as ITechnicalSkillRepository;
+    var technicalSkills = _technicalSkillsRepository.GetAllTechnicalSkills();
+
+    //var technicalSkillsQuery = from skill in technicalSkills
+    //                           select skill.Name;
+
+    //foreach (var name in technicalSkillsQuery)
+    //    return name;
 }
 
 <div class="text-center">
@@ -11,9 +24,28 @@
     <ul>
         <li>Create Model Entities</li>
         <ul>
-            <li>Ahmed Jama</li>
+            <li><s>@persona.Name</s></li>
             <li>Professional Experience</li>
-            <li>Technical Skills/Languages</li>
+            <ul>
+                Languages
+                @foreach (TechnicalSkill skill in technicalSkills)
+                {
+                    @if (skill.Type == "Language")
+                    {
+                        <li>@skill.Name</li>
+                    }
+                }
+            </ul>
+            <ul>
+                Technologies
+                @foreach (TechnicalSkill skill in technicalSkills)
+                {
+                    @if (skill.Type == "Technology")
+                    {
+                        <li>@skill.Name</li>
+                    }
+                }
+            </ul>
             <li>Soft Skills</li>
             <li>Education</li>
         </ul>
