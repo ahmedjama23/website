@@ -1,11 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Welcome";
-    var profilePicPath = "https://localhost:5001/img/188_1480808926847.jpg";
 }
 
 <div class="container">
     <div align="center">
-        <img style="box-shadow: 0 0 8px 8px white inset; border-radius: 50%;" src="@profilePicPath">
+        <img style="box-shadow: 0 0 8px 8px white inset; border-radius: 50%;" src=@Url.Content("~/img/188_1480808926847.jpg")>
     </div>
 
     <div class="row justify-content-center">
