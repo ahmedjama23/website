@@ -6,7 +6,7 @@
 @using dotnet.Models.Jobs;
 
 @{
-    ViewData["Title"] = "Resume";
+    ViewData["Title"] = "About Me";
     var persona = ViewData["Persona"] as Persona;
     var technicalSkillsRepository = ViewData["TechnicalSkillRepository"] as ITechnicalSkillRepository;
     var softSkillsRepository = ViewData["SoftSkillRepository"] as ISoftSkillRepository;
@@ -39,7 +39,7 @@
         <div class="row justify-content-center">
             <div class="col-4">
                 <ul style="list-style-type: none">
-                    <h4>Languages</h4>
+                    <h4><u>Languages</u></h4>
                     @foreach (TechnicalSkill skill in technicalSkills)
                     {
                         @if (skill.Type == "Language")
@@ -51,7 +51,7 @@
             </div>
             <div class="col-4">
                 <ul style="list-style-type: none">
-                    <h4>Technologies</h4>
+                    <h4><u>Technologies</u></h4>
                     @foreach (TechnicalSkill technicalSkill in technicalSkills)
                     {
                         @if (technicalSkill.Type == "Technology")
@@ -103,38 +103,35 @@
                         </div>
                     </div>
                 }
-
                 <div class="row">
                     <div class="col">
                         <h5 class="text-left"><b>@job.Position</b></h5>
                     </div>
-                    <div class="col">
-                        <p class="text-right"><b>@job.BeginDate - @job.EndDate</b></p>
+                    <div class="col text-right">
+                        <b>@job.BeginDate - @job.EndDate</b>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <p class="text-left"><b>@job.Company - @job.Locale</b></p>
+                    <div class="col text-left">
+                        <b>@job.Company - @job.Locale</b>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <p class="text-left">@job.Description</p>
+                    <div class="col text-left">
+                        @job.Description
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col">
-                        <p class="text-left"><u>Responsibilities</u></p>
+                    <div class="col text-left">
+                       <u>Responsibilities</u>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col">
                         <ul style="list-style-type: disc">
                             @foreach (string resp in job.Responsibilities)
                             {
-                                <li><p class="text-left">@resp</p></li>
+                                <li class="text-left">@resp</li>
                             }
                         </ul>
                     </div>

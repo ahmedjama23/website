@@ -33,7 +33,7 @@ namespace dotnet.Controllers
             return View();
         }
 
-        public IActionResult Resume()
+        public IActionResult AboutMe()
         {
             ViewData["Persona"] = persona;
             ViewData["TechnicalSkillRepository"] = _technicalSkillRepository;
