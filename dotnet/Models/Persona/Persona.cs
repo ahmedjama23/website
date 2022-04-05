@@ -14,7 +14,6 @@ namespace dotnet.Models.Persona
         //Id = id;
         //Name = name;
         //Email = email;
-        //Phone = phone;
         //Locale = locale;
         //}
 
