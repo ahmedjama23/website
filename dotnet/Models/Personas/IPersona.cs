@@ -1,5 +1,5 @@
 ﻿using System;
-namespace dotnet.Models.Persona
+namespace dotnet.Models.Personas
 {
     public interface IPersona
     {

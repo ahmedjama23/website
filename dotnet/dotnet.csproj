@@ -6,11 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Models\Persona\" />
     <None Remove="Models\Technical Skills\" />
     <None Remove="Models\Soft Skills\" />
     <None Remove="Models\Education\" />
     <None Remove="Models\Experience\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Models\Responsibilities\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -22,6 +23,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.23" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.23" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,10 +32,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Persona\" />
-    <Folder Include="Models\Technical Skills\" />
-    <Folder Include="Models\Soft Skills\" />
-    <Folder Include="Models\Education\" />
+    <Folder Include="Models\TechnicalSkills\" />
+    <Folder Include="Models\SoftSkills\" />
+    <Folder Include="Models\Educations\" />
     <Folder Include="Models\Jobs\" />
+    <Folder Include="Models\Responsibilities\" />
   </ItemGroup>
 </Project>

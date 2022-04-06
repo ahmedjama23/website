@@ -1,5 +1,5 @@
 ﻿using System;
-namespace dotnet.Models.Education
+namespace dotnet.Models.Educations
 {
     public class Education: IEducation
     {

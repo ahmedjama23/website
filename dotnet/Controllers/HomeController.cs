@@ -8,8 +8,8 @@ using Microsoft.Extensions.Logging;
 using dotnet.Models;
 using dotnet.Models.TechnicalSkills;
 using dotnet.Models.SoftSkills;
-using dotnet.Models.Persona;
-using dotnet.Models.Education;
+using dotnet.Models.Personas;
+using dotnet.Models.Educations;
 using dotnet.Models.Jobs;
 
 namespace dotnet.Controllers

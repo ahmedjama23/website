@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace dotnet.Models.Education
+namespace dotnet.Models.Educations
 {
     public class MockEducationRepository: IEducationRepository
     {
