@@ -3,16 +3,12 @@ namespace dotnet.Models.TechnicalSkills
 {
     public class TechnicalSkill : ITechnicalSkill
     {
-        public int Id { get; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
 
-        //Constructor
-        public TechnicalSkill(int id, string name, string type)
+        public TechnicalSkill()
         {
-            this.Id = id;
-            this.Name = name;
-            this.Type = type;
         }
 
     }

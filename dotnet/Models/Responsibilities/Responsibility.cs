@@ -7,11 +7,8 @@ namespace dotnet.Models.Responsibilities
         public int JobId { get; set; }
         public string Description { get; set; }
 
-        public Responsibility(int id, int jobId, string desc)
+        public Responsibility()
         {
-            this.Id = id;
-            this.JobId = jobId;
-            this.Description = desc;
         }
 
     }

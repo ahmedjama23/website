@@ -14,15 +14,8 @@ namespace dotnet.Models.Jobs
         public string EndDate { get; set; }
 
 
-        public Job(int id, string company, string position, string locale, string desc, string beginDate, string endDate)
+        public Job()
         {
-            this.Id = id;
-            this.Company = company;
-            this.Position = position;
-            this.Locale = locale;
-            this.Description = desc;
-            this.BeginDate = beginDate;
-            this.EndDate = endDate;
         }
     }
 }

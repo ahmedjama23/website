@@ -5,19 +5,23 @@ using dotnet.Models.Personas;
 using dotnet.Models.TechnicalSkills;
 using dotnet.Models.SoftSkills;
 using dotnet.Models.Jobs;
-using Microsoft.Extensions.Configuration;
+using dotnet.Models.Responsibilities;
+using Microsoft.Data.Sqlite;
 
 namespace dotnet.Models
 {
     public class DatabaseContext : DbContext
     {
-        //public DbSet<Education> Educations { get; set; }
-        public DbSet<Persona> Personas { get; set; }
-        //public DbSet<TechnicalSkill> TechnicalSkills { get; set; }
-        //public DbSet<SoftSkill> SoftSkills { get; set; }
-        //public DbSet<Job> Jobs { get; set; }
+        public DbSet<Education> Education { get; set; }
+        public DbSet<Persona> Persona { get; set; }
+        public DbSet<TechnicalSkill> TechnicalSkill { get; set; }
+        public DbSet<SoftSkill> SoftSkill { get; set; }
+        public DbSet<Job> Job { get; set; }
+        public DbSet<Responsibility> Responsibility { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlite("lite.db");
+        => options.UseSqlite(@"Data Source=lite.db");
     }
 }

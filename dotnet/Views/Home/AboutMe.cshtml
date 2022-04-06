@@ -9,16 +9,11 @@
 @{
     ViewData["Title"] = "About Me";
     var persona = ViewData["Persona"] as Persona;
-    var technicalSkillsRepository = ViewData["TechnicalSkillRepository"] as ITechnicalSkillRepository;
-    var softSkillsRepository = ViewData["SoftSkillRepository"] as ISoftSkillRepository;
-    var educationRepository = ViewData["EducationRepository"] as IEducationRepository;
-    var jobRepository = ViewData["JobRepository"] as IJobRepository;
-    var responsibilityRepository = ViewData["ResponsibilityRepository"] as IResponsibilityRepository;
-
-    var technicalSkills = technicalSkillsRepository.GetAllTechnicalSkills();
-    var softSkills = softSkillsRepository.GetAllSoftSkills();
-    var education = educationRepository.GetAllEducation();
-    var jobs = jobRepository.GetAllJobs();
+    var technicalSkills = ViewData["TechnicalSkills"] as List<TechnicalSkill>;
+    var softSkills = ViewData["SoftSkills"] as List<SoftSkill>;
+    var education = ViewData["Educations"] as List<Education>;
+    var jobs = ViewData["Jobs"] as List<Job>;
+    var responsibilities = ViewData["Responsibilities"] as List<Responsibility>;
 }
 
 <body>
@@ -42,11 +37,11 @@
             <div class="col-4">
                 <ul style="list-style-type: none">
                     <h4><u>Languages</u></h4>
-                    @foreach (TechnicalSkill skill in technicalSkills)
+                    @foreach (TechnicalSkill technicalSkill in technicalSkills)
                     {
-                        @if (skill.Type == "Language")
+                        @if (technicalSkill.Type == "Language")
                         {
-                            <li>@skill.Name</li>
+                            <li>@technicalSkill.Name</li>
                         }
                     }
                 </ul>
@@ -132,7 +127,7 @@
                     <div class="col">
                         <ul style="list-style-type: disc">
                             @{
-                                var responsibilities = responsibilityRepository.GetResponsibilitiesByJob(job.Id);
+                                List<Responsibility> jobResps = responsibilities.FindAll(delegate (Responsibility r){return r.JobId == job.Id;});
                                 foreach(Responsibility resp in responsibilities)
                                 {
                                     <li class="text-left">@resp.Description</li>

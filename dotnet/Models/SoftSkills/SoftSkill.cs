@@ -3,16 +3,13 @@ namespace dotnet.Models.SoftSkills
 {
     public class SoftSkill : ISoftSkill
     {
-        public int Id { get; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Subtitle { get; set; }
 
-        //Constructor
-        public SoftSkill(int id, string title, string subtitle)
+
+        public SoftSkill()
         {
-            this.Id = id;
-            this.Title = title;
-            this.Subtitle = subtitle;
         }
 
     }

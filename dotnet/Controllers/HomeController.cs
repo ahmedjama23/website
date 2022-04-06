@@ -37,12 +37,16 @@ namespace dotnet.Controllers
 
         public IActionResult AboutMe()
         {
-            ViewData["Persona"] = persona;
-            ViewData["TechnicalSkillRepository"] = _technicalSkillRepository;
-            ViewData["SoftSkillRepository"] = _softSkillRepository;
-            ViewData["EducationRepository"] = _educationRepository;
-            ViewData["JobRepository"] = _jobRepository;
-            ViewData["ResponsibilityRepository"] = _responsibilityRepository;
+            using (var db = new DatabaseContext())
+            {
+                ViewData["Persona"] = db.Persona.First();
+                ViewData["TechnicalSkills"] = db.TechnicalSkill.ToList();
+                ViewData["SoftSkills"] = db.SoftSkill.ToList();
+                ViewData["Educations"] = db.Education.ToList();
+                ViewData["Jobs"] = db.Job.ToList();
+                ViewData["Responsibilities"] = db.Responsibility.ToList();
+            }
+
             return View();
         }
 

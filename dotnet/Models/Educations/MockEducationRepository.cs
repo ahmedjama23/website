@@ -12,7 +12,7 @@ namespace dotnet.Models.Educations
         {
             _educationSkillList = new List<Education>();
 
-            _educationSkillList.Add(new Education(1, "Mount Royal University", "Bachelor of Computer Information Systems", "Calgary, AB", 2013, 2019));
+            //_educationSkillList.Add(new Education(1, "Mount Royal University", "Bachelor of Computer Information Systems", "Calgary, AB", 2013, 2019));
         }
 
         public List<Education> GetAllEducation()
