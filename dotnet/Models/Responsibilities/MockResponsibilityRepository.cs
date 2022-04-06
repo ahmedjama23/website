@@ -39,5 +39,11 @@ namespace dotnet.Models.Responsibilities
         {
             return _responsibilityList.Find(x => x.Id == id);
         }
+
+
+        public List<Responsibility> GetResponsibilitiesByJob(int jobId)
+        {
+            return _responsibilityList.FindAll(x => x.JobId == jobId);
+        }
     }
 }

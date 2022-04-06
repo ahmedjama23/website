@@ -4,6 +4,7 @@
 @using dotnet.Models.Personas;
 @using dotnet.Models.Educations;
 @using dotnet.Models.Jobs;
+@using dotnet.Models.Responsibilities;
 
 @{
     ViewData["Title"] = "About Me";
@@ -12,6 +13,7 @@
     var softSkillsRepository = ViewData["SoftSkillRepository"] as ISoftSkillRepository;
     var educationRepository = ViewData["EducationRepository"] as IEducationRepository;
     var jobRepository = ViewData["JobRepository"] as IJobRepository;
+    var responsibilityRepository = ViewData["ResponsibilityRepository"] as IResponsibilityRepository;
 
     var technicalSkills = technicalSkillsRepository.GetAllTechnicalSkills();
     var softSkills = softSkillsRepository.GetAllSoftSkills();
@@ -95,7 +97,7 @@
         @foreach (Job job in jobs)
         {
             <div class="container">
-                @if(job.Id != 1)
+                @if (job.Id != 1)
                 {
                     <div class="row justify-content-center">
                         <div class="col-3">
@@ -123,15 +125,18 @@
                 </div>
                 <div class="row">
                     <div class="col text-left">
-                       <u>Responsibilities</u>
+                        <u>Responsibilities</u>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <ul style="list-style-type: disc">
-                            @foreach (string resp in job.Responsibilities)
-                            {
-                                <li class="text-left">@resp</li>
+                            @{
+                                var responsibilities = responsibilityRepository.GetResponsibilitiesByJob(job.Id);
+                                foreach(Responsibility resp in responsibilities)
+                                {
+                                    <li class="text-left">@resp.Description</li>
+                                }
                             }
                         </ul>
                     </div>

@@ -11,6 +11,7 @@ using dotnet.Models.SoftSkills;
 using dotnet.Models.Personas;
 using dotnet.Models.Educations;
 using dotnet.Models.Jobs;
+using dotnet.Models.Responsibilities;
 
 namespace dotnet.Controllers
 {
@@ -21,6 +22,7 @@ namespace dotnet.Controllers
         private ISoftSkillRepository _softSkillRepository = new MockSoftSkillRepository();
         private IEducationRepository _educationRepository = new MockEducationRepository();
         private IJobRepository _jobRepository = new MockJobRepository();
+        private IResponsibilityRepository _responsibilityRepository = new MockResponsibilityRepository();
         private Persona persona = new Persona();
 
         public HomeController(ILogger<HomeController> logger)
@@ -40,6 +42,7 @@ namespace dotnet.Controllers
             ViewData["SoftSkillRepository"] = _softSkillRepository;
             ViewData["EducationRepository"] = _educationRepository;
             ViewData["JobRepository"] = _jobRepository;
+            ViewData["ResponsibilityRepository"] = _responsibilityRepository;
             return View();
         }
 
