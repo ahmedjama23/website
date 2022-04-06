@@ -6,24 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using dotnet.Models;
-using dotnet.Models.TechnicalSkills;
-using dotnet.Models.SoftSkills;
-using dotnet.Models.Personas;
-using dotnet.Models.Educations;
-using dotnet.Models.Jobs;
-using dotnet.Models.Responsibilities;
 
 namespace dotnet.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private ITechnicalSkillRepository _technicalSkillRepository = new MockTechnicalSkillRepository();
-        private ISoftSkillRepository _softSkillRepository = new MockSoftSkillRepository();
-        private IEducationRepository _educationRepository = new MockEducationRepository();
-        private IJobRepository _jobRepository = new MockJobRepository();
-        private IResponsibilityRepository _responsibilityRepository = new MockResponsibilityRepository();
-        private Persona persona = new Persona();
 
         public HomeController(ILogger<HomeController> logger)
         {
