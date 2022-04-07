@@ -5,6 +5,14 @@
     <UserSecretsId>aspnet-dotnet-5752450E-C6CE-4640-8D14-ABB9A37B3160</UserSecretsId>
   </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.2.0" />
+    </ItemGroup>
+
   <ItemGroup>
     <None Remove="Models\Technical Skills\" />
     <None Remove="Models\Soft Skills\" />
