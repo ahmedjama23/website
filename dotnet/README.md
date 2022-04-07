@@ -20,7 +20,7 @@ Allows for the entry of job positions, skills and education through a SQLite dat
 * Multer
 
 ## Languages
-C#
-SQLite
-HTML
-CSS
+* C#
+* SQLite
+* HTML
+* CSS
